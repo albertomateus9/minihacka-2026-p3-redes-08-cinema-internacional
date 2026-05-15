@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ingressos de Cinema Internacional | MiniHacka P3 Redes</title>
+    <meta name="description" content="Um site internacional para encontrar ingressos e informações de cinemas, incluindo filme, lugar e avaliação do espaço em diferentes cidades." />
+    <meta name="theme-color" content="#111827" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body style="--primary: #111827; --secondary: #c2410c; --accent: #facc15;">
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Ingressos de Cinema Internacional">
+        <span class="brand-mark">08</span>
+        <span>Cinema</span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="#recursos">Recursos</a>
+        <a href="#previa">Prévia</a>
+        <a href="#equipe">Equipe</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-copy">
+          <h1>Ingressos de Cinema Internacional</h1>
+          <p class="tagline">Ingressos, cinemas e avaliações para quem está viajando.</p>
+          <p>Um site internacional para encontrar ingressos e informações de cinemas, incluindo filme, lugar e avaliação do espaço em diferentes cidades.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#previa">Buscar sessões</a>
+            <a class="button button-secondary" href="#equipe">Conhecer equipe</a>
+          </div>
+          <ol class="step-list" aria-label="Fluxo principal">
+            <li>Escolher cidade</li><li>Comparar sessões</li><li>Comprar ingresso</li>
+          </ol>
+        </div>
+        <div class="hero-media" aria-label="Visual do projeto">
+          <img src="assets/visual.svg" alt="Prévia visual do site Ingressos de Cinema Internacional" />
+        </div>
+      </section>
+
+      <section class="section" id="recursos">
+        <div class="section-heading">
+          <span>Projeto da equipe 08</span>
+          <h2>Uma proposta simples para virar protótipo navegável.</h2>
+        </div>
+        <div class="feature-grid">
+          
+        <article class="feature-card">
+          <span class="feature-index">01</span>
+          <h3>Busca por cidade</h3>
+          <p>Viajantes encontram cinemas e sessões mesmo sem conhecer o lugar.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">02</span>
+          <h3>Informações completas</h3>
+          <p>Filme, horário, endereço e empresa aparecem na mesma tela.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">03</span>
+          <h3>Avaliação do espaço</h3>
+          <p>Notas e comentários ajudam a escolher a melhor experiência.</p>
+        </article>
+        </div>
+      </section>
+
+      <section class="section preview-section" id="previa">
+        <div class="preview-copy">
+          <span>Prévia interativa</span>
+          <h2>Experimente uma parte da ideia.</h2>
+          <p data-response>Lisboa selecionada: sessões próximas ao centro e cinemas bem avaliados.</p>
+          <div class="chip-row" aria-label="Opções da prévia">
+            
+          <button class="chip is-active" type="button" data-response="Lisboa selecionada: sessões próximas ao centro e cinemas bem avaliados.">Lisboa</button>
+          <button class="chip" type="button" data-response="Buenos Aires selecionada: compare empresas e horários disponíveis.">Buenos Aires</button>
+          <button class="chip" type="button" data-response="Toronto selecionada: filtros por idioma, preço e avaliação.">Toronto</button>
+          </div>
+          <button class="button button-primary" type="button" data-demo-action>Buscar sessões</button>
+          <p class="counter" data-counter>Interações nesta visita: 0</p>
+        </div>
+        <div class="metric-grid">
+          
+          <article class="metric-card">
+            <span>Filme em alta</span>
+            <strong>Sessão 19h30</strong>
+            <p>Sala com avaliação 4,8.</p>
+          </article>
+          <article class="metric-card">
+            <span>Cinemas</span>
+            <strong>24 opções</strong>
+            <p>Resultados na cidade escolhida.</p>
+          </article>
+          <article class="metric-card">
+            <span>Melhor nota</span>
+            <strong>4,9/5</strong>
+            <p>Espaço confortável e acessível.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section team-section" id="equipe">
+        <div class="section-heading">
+          <span>Integrantes</span>
+          <h2>Funções da equipe no desenvolvimento.</h2>
+        </div>
+        <div class="team-grid">
+          
+        <article class="member-card">
+          <span>Gerente de Ideias</span>
+          <strong>Ygor Cauã Costa</strong>
+        </article>
+        <article class="member-card">
+          <span>Designer</span>
+          <strong>Lucas Ambé</strong>
+        </article>
+        <article class="member-card">
+          <span>Construtor(a) HTML</span>
+          <strong>Michaelly Caroline Rodrigues</strong>
+        </article>
+        <article class="member-card">
+          <span>Estilista CSS</span>
+          <strong>João Pedro Ambé</strong>
+        </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>MiniHacka 2026-1 - 3º período de Redes de Computadores (Integrado).</p>
+      <a href="#inicio">Voltar ao topo</a>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
