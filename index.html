@@ -16,6 +16,7 @@
       </a>
       <nav aria-label="Navegação principal">
         <a href="#recursos">Recursos</a>
+        <a href="#exemplos">Exemplos</a>
         <a href="#previa">Prévia</a>
         <a href="#equipe">Equipe</a>
       </nav>
@@ -43,7 +44,7 @@
       <section class="section" id="recursos">
         <div class="section-heading">
           <span>Projeto da equipe 08</span>
-          <h2>Uma proposta simples para virar protótipo navegável.</h2>
+          <h2>Exemplos para encontrar cinema em outra cidade sem conhecer o lugar.</h2>
         </div>
         <div class="feature-grid">
           
@@ -65,17 +66,44 @@
         </div>
       </section>
 
+      <section class="section examples-section" id="exemplos">
+        <div class="section-heading">
+          <span>Exemplos de uso</span>
+          <h2>Dados fictícios para mostrar como a ideia funcionaria.</h2>
+        </div>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <h3>Busca por cidade</h3>
+          <p>Viajante escolhe Lisboa, Buenos Aires ou Toronto para ver sessões próximas.</p>
+        </article>
+        <article class="example-card">
+          <h3>Comparação de salas</h3>
+          <p>O site mostra horário, idioma, preço fictício e avaliação do espaço.</p>
+        </article>
+        <article class="example-card">
+          <h3>Compra guiada</h3>
+          <p>A pessoa escolhe filme, lugar e sessão antes de ir para o ingresso.</p>
+        </article>
+        </div>
+      </section>
+
       <section class="section preview-section" id="previa">
         <div class="preview-copy">
           <span>Prévia interativa</span>
-          <h2>Experimente uma parte da ideia.</h2>
-          <p data-response>Lisboa selecionada: sessões próximas ao centro e cinemas bem avaliados.</p>
+          <h2>Troque o cenário e veja um exemplo da proposta.</h2>
+          <p data-demo-summary>Resultado fictício mostra cinema central, avaliação 4,8 e trajeto simples.</p>
           <div class="chip-row" aria-label="Opções da prévia">
             
-          <button class="chip is-active" type="button" data-response="Lisboa selecionada: sessões próximas ao centro e cinemas bem avaliados.">Lisboa</button>
-          <button class="chip" type="button" data-response="Buenos Aires selecionada: compare empresas e horários disponíveis.">Buenos Aires</button>
-          <button class="chip" type="button" data-response="Toronto selecionada: filtros por idioma, preço e avaliação.">Toronto</button>
+          <button class="chip is-active" type="button" data-scenario-title="Sessão 19h30 - legenda PT" data-scenario-summary="Resultado fictício mostra cinema central, avaliação 4,8 e trajeto simples." data-scenario-meta="Preço estimado: €8,50" data-scenario-detail="A comparação ajuda turistas a escolherem uma sala bem avaliada perto do local onde estão.">Lisboa</button>
+          <button class="chip" type="button" data-scenario-title="Filme em espanhol - 21h" data-scenario-summary="Sessão organizada por bairro, empresa de cinema e avaliação do espaço." data-scenario-meta="Avaliação: 4,6/5" data-scenario-detail="O visitante vê se o cinema tem boa localização e se a sessão combina com seu idioma.">Buenos Aires</button>
+          <button class="chip" type="button" data-scenario-title="Sessão IMAX - 18h" data-scenario-summary="Busca com filtros por tipo de sala, preço e distância." data-scenario-meta="Filtro ativo: melhor avaliação" data-scenario-detail="A prévia mostra como comparar empresas diferentes em uma cidade desconhecida.">Toronto</button>
           </div>
+          <article class="demo-panel" aria-live="polite">
+            <span data-demo-meta>Preço estimado: €8,50</span>
+            <strong data-demo-title>Sessão 19h30 - legenda PT</strong>
+            <p data-demo-detail>A comparação ajuda turistas a escolherem uma sala bem avaliada perto do local onde estão.</p>
+          </article>
           <button class="button button-primary" type="button" data-demo-action>Buscar sessões</button>
           <p class="counter" data-counter>Interações nesta visita: 0</p>
         </div>
