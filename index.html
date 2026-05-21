@@ -1,162 +1,573 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ingressos de Cinema Internacional | MiniHacka P3 Redes</title>
-    <meta name="description" content="Um site internacional para encontrar ingressos e informações de cinemas, incluindo filme, lugar e avaliação do espaço em diferentes cidades." />
-    <meta name="theme-color" content="#111827" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingressos de Cinema Internacional | Bilheteria Global 08</title>
+    <meta name="description" content="Simulador de bilheteria e portal de cinemas internacionais. Encontre redes globais como AMC, Cinépolis e UCI, e compre ingressos em moedas locais." />
+    <meta name="theme-color" content="#060813" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body style="--primary: #111827; --secondary: #c2410c; --accent: #facc15;">
+  <body style="--primary: #ff5d22; --secondary: #00f0ff; --background: #060813; --accent: #8b5cf6;">
+    
+    <!-- Orbes de Gradiente de Fundo (Aura Cinema) -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
     <header class="site-header">
       <a class="brand" href="#inicio" aria-label="Ingressos de Cinema Internacional">
         <span class="brand-mark">08</span>
-        <span>Cinema</span>
+        <span>Cinema<span class="brand-dot">.</span></span>
       </a>
       <nav aria-label="Navegação principal">
-        <a href="#recursos">Recursos</a>
-        <a href="#exemplos">Exemplos</a>
-        <a href="#previa">Prévia</a>
+        <a href="#redes">Redes Globais</a>
+        <a href="#filmes">Filmes</a>
+        <a href="#cinemas">Cinemas</a>
+        <a href="#simulador">Bilheteria</a>
         <a href="#equipe">Equipe</a>
       </nav>
     </header>
 
     <main>
+      
+      <!-- HERO SECTION -->
       <section class="hero" id="inicio">
         <div class="hero-copy">
-          <h1>Ingressos de Cinema Internacional</h1>
-          <p class="tagline">Ingressos, cinemas e avaliações para quem está viajando.</p>
-          <p>Um site internacional para encontrar ingressos e informações de cinemas, incluindo filme, lugar e avaliação do espaço em diferentes cidades.</p>
+          <span class="badge-tag">Plataforma Global</span>
+          <h1>Bilheteria de Cinema Internacional</h1>
+          <p class="tagline">Ingressos, redes mundiais e salas de exibição em qualquer continente.</p>
+          <p class="hero-description">Seja em Belém, Portland ou Milão, encontre os principais lançamentos e compare os melhores cinemas do mundo. A nossa bilheteria inteligente adapta horários, salas e moedas locais de forma 100% dinâmica.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#previa">Buscar sessões</a>
-            <a class="button button-secondary" href="#equipe">Conhecer equipe</a>
+            <a class="button button-primary" href="#simulador">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7.5 8h9M7.5 12h9M7.5 16h9M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg>
+              Comprar Ingressos
+            </a>
+            <a class="button button-secondary" href="#filmes">Explorar Filmes</a>
           </div>
-          <ol class="step-list" aria-label="Fluxo principal">
-            <li>Escolher cidade</li><li>Comparar sessões</li><li>Comprar ingresso</li>
+          <ol class="step-list" aria-label="Como funciona o sistema">
+            <li>
+              <span class="step-num">01</span>
+              <div>
+                <strong>Escolha a Sala</strong>
+                <span>Selecione a cidade do cinema</span>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">02</span>
+              <div>
+                <strong>Selecione Poltronas</strong>
+                <span>Escolha no mapa interativo</span>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">03</span>
+              <div>
+                <strong>Gere o Ticket</strong>
+                <span>Obtenha seu bilhete digital</span>
+              </div>
+            </li>
           </ol>
         </div>
-        <div class="hero-media" aria-label="Visual do projeto">
-          <img src="assets/visual.svg" alt="Prévia visual do site Ingressos de Cinema Internacional" />
-        </div>
-      </section>
-
-      <section class="section" id="recursos">
-        <div class="section-heading">
-          <span>Projeto da equipe 08</span>
-          <h2>Exemplos para encontrar cinema em outra cidade sem conhecer o lugar.</h2>
-        </div>
-        <div class="feature-grid">
-          
-        <article class="feature-card">
-          <span class="feature-index">01</span>
-          <h3>Busca por cidade</h3>
-          <p>Viajantes encontram cinemas e sessões mesmo sem conhecer o lugar.</p>
-        </article>
-        <article class="feature-card">
-          <span class="feature-index">02</span>
-          <h3>Informações completas</h3>
-          <p>Filme, horário, endereço e empresa aparecem na mesma tela.</p>
-        </article>
-        <article class="feature-card">
-          <span class="feature-index">03</span>
-          <h3>Avaliação do espaço</h3>
-          <p>Notas e comentários ajudam a escolher a melhor experiência.</p>
-        </article>
-        </div>
-      </section>
-
-      <section class="section examples-section" id="exemplos">
-        <div class="section-heading">
-          <span>Exemplos de uso</span>
-          <h2>Dados fictícios para mostrar como a ideia funcionaria.</h2>
-        </div>
-        <div class="examples-grid">
-          
-        <article class="example-card">
-          <h3>Busca por cidade</h3>
-          <p>Viajante escolhe Lisboa, Buenos Aires ou Toronto para ver sessões próximas.</p>
-        </article>
-        <article class="example-card">
-          <h3>Comparação de salas</h3>
-          <p>O site mostra horário, idioma, preço fictício e avaliação do espaço.</p>
-        </article>
-        <article class="example-card">
-          <h3>Compra guiada</h3>
-          <p>A pessoa escolhe filme, lugar e sessão antes de ir para o ingresso.</p>
-        </article>
-        </div>
-      </section>
-
-      <section class="section preview-section" id="previa">
-        <div class="preview-copy">
-          <span>Prévia interativa</span>
-          <h2>Troque o cenário e veja um exemplo da proposta.</h2>
-          <p data-demo-summary>Resultado fictício mostra cinema central, avaliação 4,8 e trajeto simples.</p>
-          <div class="chip-row" aria-label="Opções da prévia">
-            
-          <button class="chip is-active" type="button" data-scenario-title="Sessão 19h30 - legenda PT" data-scenario-summary="Resultado fictício mostra cinema central, avaliação 4,8 e trajeto simples." data-scenario-meta="Preço estimado: €8,50" data-scenario-detail="A comparação ajuda turistas a escolherem uma sala bem avaliada perto do local onde estão.">Lisboa</button>
-          <button class="chip" type="button" data-scenario-title="Filme em espanhol - 21h" data-scenario-summary="Sessão organizada por bairro, empresa de cinema e avaliação do espaço." data-scenario-meta="Avaliação: 4,6/5" data-scenario-detail="O visitante vê se o cinema tem boa localização e se a sessão combina com seu idioma.">Buenos Aires</button>
-          <button class="chip" type="button" data-scenario-title="Sessão IMAX - 18h" data-scenario-summary="Busca com filtros por tipo de sala, preço e distância." data-scenario-meta="Filtro ativo: melhor avaliação" data-scenario-detail="A prévia mostra como comparar empresas diferentes em uma cidade desconhecida.">Toronto</button>
+        <div class="hero-media-wrapper">
+          <div class="hero-media" aria-label="Visual do projeto">
+            <img src="assets/audience1.jpg" alt="Público de óculos 3D em uma sala de cinema premium" />
+            <div class="hero-media-overlay">
+              <div class="glass-tag">
+                <span class="tag-pulse"></span>
+                <span>Projeção IMAX Ativa</span>
+              </div>
+            </div>
           </div>
-          <article class="demo-panel" aria-live="polite">
-            <span data-demo-meta>Preço estimado: €8,50</span>
-            <strong data-demo-title>Sessão 19h30 - legenda PT</strong>
-            <p data-demo-detail>A comparação ajuda turistas a escolherem uma sala bem avaliada perto do local onde estão.</p>
-          </article>
-          <button class="button button-primary" type="button" data-demo-action>Buscar sessões</button>
-          <p class="counter" data-counter>Interações nesta visita: 0</p>
         </div>
-        <div class="metric-grid">
+      </section>
+
+      <!-- SEÇÃO REDES GLOBAIS (SLIDE 2) -->
+      <section class="section" id="redes">
+        <div class="section-heading">
+          <span class="section-subtitle">Exibição Mundial</span>
+          <h2>Redes de Cinema Internacionais</h2>
+          <p>Mapeamos as oito maiores e mais importantes redes de cinemas que dominam os mercados americano, europeu, latino-americano e asiático.</p>
+        </div>
+        
+        <div class="chains-showcase">
+          <div class="chains-grid">
+            <button class="chain-tab is-active" data-chain="amc">
+              <strong>AMC Theatres</strong>
+              <span>EUA & Europa</span>
+            </button>
+            <button class="chain-tab" data-chain="cineworld">
+              <strong>Cineworld</strong>
+              <span>EUA & UK</span>
+            </button>
+            <button class="chain-tab" data-chain="cinepolis">
+              <strong>Cinépolis</strong>
+              <span>América Latina</span>
+            </button>
+            <button class="chain-tab" data-chain="cinemark">
+              <strong>Cinemark</strong>
+              <span>EUA & LatAm</span>
+            </button>
+            <button class="chain-tab" data-chain="cgv">
+              <strong>CGV</strong>
+              <span>Ásia</span>
+            </button>
+            <button class="chain-tab" data-chain="uci">
+              <strong>UCI Cinemas</strong>
+              <span>Europa & Brasil</span>
+            </button>
+            <button class="chain-tab" data-chain="pvr">
+              <strong>PVR Inox</strong>
+              <span>Índia</span>
+            </button>
+            <button class="chain-tab" data-chain="vue">
+              <strong>Vue</strong>
+              <span>Europa</span>
+            </button>
+          </div>
           
-          <article class="metric-card">
-            <span>Filme em alta</span>
-            <strong>Sessão 19h30</strong>
-            <p>Sala com avaliação 4,8.</p>
-          </article>
-          <article class="metric-card">
-            <span>Cinemas</span>
-            <strong>24 opções</strong>
-            <p>Resultados na cidade escolhida.</p>
-          </article>
-          <article class="metric-card">
-            <span>Melhor nota</span>
-            <strong>4,9/5</strong>
-            <p>Espaço confortável e acessível.</p>
+          <article class="chain-detail-panel glass-panel" aria-live="polite">
+            <div class="chain-detail-header">
+              <span class="badge-glow">Rede Selecionada</span>
+              <h3 id="chain-title">AMC Theatres</h3>
+            </div>
+            <p id="chain-description">Maior rede de cinemas do mundo, opera massivamente nos Estados Unidos e na Europa (sob as marcas Odeon e UCI Cinemas), oferecendo salas premium e projeção digital de última geração.</p>
           </article>
         </div>
       </section>
 
+      <!-- SEÇÃO FILMES EM DESTAQUE (SLIDE 3) -->
+      <section class="section" id="filmes">
+        <div class="section-heading">
+          <span class="section-subtitle">Os Três Mais Famosos</span>
+          <h2>Filmes em Destaque</h2>
+          <p>Confira os lançamentos e blockbusters globais com cartazes oficiais extraídos diretamente da apresentação.</p>
+        </div>
+        
+        <div class="movies-grid">
+          <!-- Filme 1 -->
+          <div class="movie-tilt-container">
+            <article class="movie-card" data-movie-id="prada2">
+              <div class="movie-poster-wrapper">
+                <img src="assets/prada2.png" alt="Pôster do filme O Diabo Veste Prada 2" loading="lazy" />
+                <span class="movie-badge badge-red">Estreia • 30/Abr</span>
+              </div>
+              <div class="movie-info">
+                <h3>O Diabo Veste Prada 2</h3>
+                <div class="movie-meta">
+                  <span class="format-tag">Comédia</span>
+                  <span class="format-tag">Drama</span>
+                </div>
+                <p>Miranda Priestly e Andy Sachs retornam em uma sequência eletrizante sobre o novo mundo das publicações digitais.</p>
+                <a href="#simulador" class="btn-quick-buy" data-select-movie="prada2">Comprar Ingresso</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Filme 2 -->
+          <div class="movie-tilt-container">
+            <article class="movie-card" data-movie-id="michael">
+              <div class="movie-poster-wrapper">
+                <img src="assets/michael.png" alt="Pôster da cinebiografia Michael" loading="lazy" />
+                <span class="movie-badge badge-blue">IMAX Experience</span>
+              </div>
+              <div class="movie-info">
+                <h3>Michael</h3>
+                <div class="movie-meta">
+                  <span class="format-tag">Cinebiografia</span>
+                  <span class="format-tag">Musical</span>
+                </div>
+                <p>A aguardada biografia que retrata a vida e a jornada artística do Rei do Pop, Michael Jackson, desde a infância até o estrelato.</p>
+                <a href="#simulador" class="btn-quick-buy" data-select-movie="michael">Comprar Ingresso</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Filme 3 -->
+          <div class="movie-tilt-container">
+            <article class="movie-card" data-movie-id="mk2">
+              <div class="movie-poster-wrapper">
+                <img src="assets/mk2.png" alt="Pôster do filme Mortal Kombat 2" loading="lazy" />
+                <span class="movie-badge badge-orange">Estreia • Maio</span>
+              </div>
+              <div class="movie-info">
+                <h3>Mortal Kombat 2</h3>
+                <div class="movie-meta">
+                  <span class="format-tag">Ação</span>
+                  <span class="format-tag">Fantasia</span>
+                </div>
+                <p>O torneio mortal continua. Novos guerreiros da Terra e da Exoterra colidem em batalhas épicas repletas de efeitos especiais.</p>
+                <a href="#simulador" class="btn-quick-buy" data-select-movie="mk2">Comprar Ingresso</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO CINEMAS DO MUNDO (SLIDE 4) -->
+      <section class="section" id="cinemas">
+        <div class="section-heading">
+          <span class="section-subtitle">Localizações Famosas</span>
+          <h2>Cinemas Perto de Você</h2>
+          <p>Conheça as salas de cinema selecionadas no projeto localizadas em cidades estratégicas internacionais e nacionais.</p>
+        </div>
+        
+        <div class="cinemas-grid">
+          <!-- Cinema 1 -->
+          <article class="cinema-card glass-panel">
+            <div class="cinema-img-wrapper">
+              <img src="assets/uci_entrance.png" alt="Entrada do UCI Shopping Grão Pará" loading="lazy" />
+              <div class="cinema-rating">4.8 ★</div>
+            </div>
+            <div class="cinema-content">
+              <h3>UCI Shopping Grão Pará</h3>
+              <span class="cinema-location">Belém, Brasil</span>
+              <p>Uma das salas mais luxuosas da região norte, equipada com confortáveis assentos de couro e sistema de som de alta definição.</p>
+              <div class="cinema-amenities">
+                <span>VIP Lounge</span>
+                <span>Projeção Laser</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cinema 2 -->
+          <article class="cinema-card glass-panel">
+            <div class="cinema-img-wrapper">
+              <img src="assets/uci_xplus.png" alt="Corredor do UCI XPLUS Shopping Metrópole" loading="lazy" />
+              <div class="cinema-rating">4.7 ★</div>
+            </div>
+            <div class="cinema-content">
+              <h3>UCI Shopping Metrópole</h3>
+              <span class="cinema-location">Belém, Brasil</span>
+              <p>Sala equipada com tecnologia XPLUS, com uma tela gigante de parede a parede e som multidimensional Dolby Atmos imersivo.</p>
+              <div class="cinema-amenities">
+                <span>XPLUS 3D</span>
+                <span>Dolby Atmos</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cinema 3 -->
+          <article class="cinema-card glass-panel">
+            <div class="cinema-img-wrapper">
+              <img src="assets/century16.png" alt="Fachada do Century Theatre Portland" loading="lazy" />
+              <div class="cinema-rating">4.6 ★</div>
+            </div>
+            <div class="cinema-content">
+              <h3>Century Theatre 16</h3>
+              <span class="cinema-location">Portland, Oregon (EUA)</span>
+              <p>Complexo tradicional que conta com poltronas reclináveis automáticas, pipoca gourmet e projetores 4K de última geração.</p>
+              <div class="cinema-amenities">
+                <span>Luxury Loungers</span>
+                <span>RealD 3D</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cinema 4 -->
+          <article class="cinema-card glass-panel">
+            <div class="cinema-img-wrapper">
+              <img src="assets/bicocca.png" alt="UCI Cinemas Bicocca em Milão" loading="lazy" />
+              <div class="cinema-rating">4.9 ★</div>
+            </div>
+            <div class="cinema-content">
+              <h3>UCI Cinemas Bicocca</h3>
+              <span class="cinema-location">Milão, Itália</span>
+              <p>O epicentro do entretenimento cinematográfico milanês. Possui salas IMAX de altíssima fidelidade e poltronas ergonômicas VIP.</p>
+              <div class="cinema-amenities">
+                <span>Sala IMAX</span>
+                <span>VIP Seats</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SIMULADOR DE BILHETERIA INTERATIVA (WOW FEATURE) -->
+      <section class="section" id="simulador">
+        <div class="section-heading">
+          <span class="section-subtitle">Reserve Online</span>
+          <h2>Simulador de Bilheteria Global</h2>
+          <p>Vivencie a experiência real da compra de ingressos. Escolha o cinema e simule a seleção de poltronas com conversão automática de moedas.</p>
+        </div>
+        
+        <div class="booking-container glass-panel">
+          <!-- Coluna 1: Configuração do Ingresso -->
+          <div class="booking-config">
+            
+            <!-- 1. Cinema / Cidade -->
+            <div class="config-group">
+              <label for="select-cinema">1. Escolha o Cinema / Cidade:</label>
+              <select id="select-cinema" class="custom-select">
+                <option value="belem-grao" data-currency="R$" data-city="Belém, Brasil" data-ticket-price="30.00" data-vip-price="60.00">UCI Shopping Grão Pará (Belém, BRL R$)</option>
+                <option value="belem-metro" data-currency="R$" data-city="Belém, Brasil" data-ticket-price="28.00" data-vip-price="55.00">UCI Shopping Metrópole (Belém, BRL R$)</option>
+                <option value="portland-century" data-currency="US$" data-city="Portland, EUA" data-ticket-price="12.00" data-vip-price="22.00">Century Theatre 16 (Portland, USD $)</option>
+                <option value="milao-bicocca" data-currency="€" data-city="Milão, Itália" data-ticket-price="10.50" data-vip-price="19.00">UCI Cinemas Bicocca (Milão, EUR €)</option>
+              </select>
+            </div>
+
+            <!-- 2. Filme -->
+            <div class="config-group">
+              <label for="select-movie">2. Selecione o Filme:</label>
+              <select id="select-movie" class="custom-select">
+                <option value="prada2">O Diabo Veste Prada 2</option>
+                <option value="michael">Michael (IMAX)</option>
+                <option value="mk2">Mortal Kombat 2</option>
+              </select>
+            </div>
+
+            <!-- 3. Formato & Horários -->
+            <div class="config-group">
+              <label>3. Sessão Disponível:</label>
+              <div class="session-chips">
+                <button class="chip-session is-active" type="button" data-time="15:30" data-format="Dublado / Standard">15:30 <span class="session-tag">Std</span></button>
+                <button class="chip-session" type="button" data-time="18:15" data-format="Legendado / Standard">18:15 <span class="session-tag">Std</span></button>
+                <button class="chip-session" type="button" data-time="21:00" data-format="Legendado / IMAX VIP">21:00 <span class="session-tag neon-txt">IMAX VIP</span></button>
+              </div>
+            </div>
+
+            <!-- 4. Tipo de Ingresso -->
+            <div class="config-group">
+              <label>4. Categoria de Ingressos:</label>
+              <div class="ticket-counters">
+                <div class="counter-row">
+                  <div class="counter-label">
+                    <strong>Inteira</strong>
+                    <span id="label-price-inteira">R$ 30,00 cada</span>
+                  </div>
+                  <div class="counter-controls">
+                    <button type="button" class="btn-counter" data-type="inteira" data-action="minus">-</button>
+                    <span class="counter-value" id="count-inteira">0</span>
+                    <button type="button" class="btn-counter" data-type="inteira" data-action="plus">+</button>
+                  </div>
+                </div>
+                
+                <div class="counter-row">
+                  <div class="counter-label">
+                    <strong>Meia-Entrada</strong>
+                    <span id="label-price-meia">R$ 15,00 cada</span>
+                  </div>
+                  <div class="counter-controls">
+                    <button type="button" class="btn-counter" data-type="meia" data-action="minus">-</button>
+                    <span class="counter-value" id="count-meia">0</span>
+                    <button type="button" class="btn-counter" data-type="meia" data-action="plus">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Resumo Financeiro Rápido -->
+            <div class="booking-summary-panel">
+              <div class="summary-line">
+                <span>Moeda Local:</span>
+                <strong id="summary-currency">BRL (R$)</strong>
+              </div>
+              <div class="summary-line text-large">
+                <span>Subtotal Estimado:</span>
+                <strong class="highlight-text" id="summary-total">R$ 0,00</strong>
+              </div>
+              <p class="summary-tip">Selecione poltronas livres ao lado para habilitar a compra.</p>
+            </div>
+
+          </div>
+
+          <!-- Coluna 2: Mapa de Assentos e Fechamento -->
+          <div class="booking-seats-map">
+            <div class="screen-container">
+              <div class="screen-curve"></div>
+              <span>TELA (IMAX / XPLUS)</span>
+            </div>
+            
+            <!-- Grid de assentos interativo -->
+            <div class="seats-grid" id="seats-container" aria-label="Mapa de assentos da sala">
+              <!-- Assentos gerados dinamicamente via JS -->
+            </div>
+
+            <!-- Legenda das Cores do Mapa -->
+            <div class="seats-legend">
+              <div class="legend-item">
+                <span class="seat-sample seat-available"></span>
+                <span>Livre</span>
+              </div>
+              <div class="legend-item">
+                <span class="seat-sample seat-vip"></span>
+                <span>VIP (+50%)</span>
+              </div>
+              <div class="legend-item">
+                <span class="seat-sample seat-selected"></span>
+                <span>Selecionado</span>
+              </div>
+              <div class="legend-item">
+                <span class="seat-sample seat-occupied"></span>
+                <span>Ocupado</span>
+              </div>
+            </div>
+
+            <!-- Rodapé da Seleção de Assentos -->
+            <div class="seats-footer">
+              <div class="selected-seats-info">
+                <span>Poltronas Selecionadas:</span>
+                <strong id="selected-seats-list">Nenhuma</strong>
+              </div>
+              <button class="button button-primary button-full" id="btn-checkout" type="button" disabled>
+                Confirmar e Emitir Ticket
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- AGRADECIMENTO FINAL (SLIDE 5) -->
+      <section class="section ending-section" id="encerramento">
+        <div class="ending-panel glass-panel">
+          <div class="ending-glow-dot"></div>
+          <h2>Agradecemos a sua Presença!</h2>
+          <p class="ending-text">“Gostaria de agradecer a todos que acompanharam essa apresentação até o fim, essa é apenas uma demonstração para a apresentação de como seria uma bilheteria internacional de cinemas.”</p>
+          <div class="ending-badge">Fim da Apresentação • Equipe 08</div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO EQUIPE -->
       <section class="section team-section" id="equipe">
         <div class="section-heading">
-          <span>Integrantes</span>
-          <h2>Funções da equipe no desenvolvimento.</h2>
+          <span class="section-subtitle">Integrantes do Projeto</span>
+          <h2>Funções da Equipe</h2>
+          <p>Conheça os estudantes do 3º período de Redes de Computadores que estruturaram o projeto conceitual de cinema.</p>
         </div>
         <div class="team-grid">
+          <!-- Integrante 1 -->
+          <article class="member-card glass-panel">
+            <div class="member-avatar">YC</div>
+            <div class="member-info">
+              <strong>Ygor Cauã Costa</strong>
+              <span class="member-role badge-orange">Gerente de Ideias</span>
+              <p>Idealizador da pesquisa internacional e curador de dados das redes.</p>
+            </div>
+          </article>
           
-        <article class="member-card">
-          <span>Gerente de Ideias</span>
-          <strong>Ygor Cauã Costa</strong>
-        </article>
-        <article class="member-card">
-          <span>Designer</span>
-          <strong>Lucas Ambé</strong>
-        </article>
-        <article class="member-card">
-          <span>Construtor(a) HTML</span>
-          <strong>Michaelly Caroline Rodrigues</strong>
-        </article>
-        <article class="member-card">
-          <span>Estilista CSS</span>
-          <strong>João Pedro Ambé</strong>
-        </article>
+          <!-- Integrante 2 -->
+          <article class="member-card glass-panel">
+            <div class="member-avatar">LA</div>
+            <div class="member-info">
+              <strong>Lucas Ambé</strong>
+              <span class="member-role badge-blue">Designer</span>
+              <p>Criador do layout do slide, artes visuais e paletas de cores.</p>
+            </div>
+          </article>
+
+          <!-- Integrante 3 -->
+          <article class="member-card glass-panel">
+            <div class="member-avatar">MR</div>
+            <div class="member-info">
+              <strong>Michaelly Caroline Rodrigues</strong>
+              <span class="member-role badge-purple">Construtora HTML</span>
+              <p>Responsável pelo esqueleto da página e acessibilidade semântica.</p>
+            </div>
+          </article>
+
+          <!-- Integrante 4 -->
+          <article class="member-card glass-panel">
+            <div class="member-avatar">JA</div>
+            <div class="member-info">
+              <strong>João Pedro Ambé</strong>
+              <span class="member-role badge-teal">Estilista CSS</span>
+              <p>Estilização visual, grid responsivo e estruturação dos cartões.</p>
+            </div>
+          </article>
         </div>
       </section>
+
     </main>
 
+    <!-- TICKET MODAL (POPUP DA COMPRA) -->
+    <div class="modal-overlay" id="ticket-modal" aria-hidden="true" role="dialog">
+      <div class="modal-card glass-panel">
+        <button class="btn-close-modal" id="btn-close-ticket" aria-label="Fechar">&times;</button>
+        
+        <div class="ticket-brand">
+          <span class="brand-mark">08</span>
+          <span>INTERNATIONAL CINEMA</span>
+        </div>
+
+        <div class="ticket-body">
+          <div class="ticket-visual-info">
+            <div class="ticket-header-group">
+              <span class="ticket-label">FILME</span>
+              <h3 id="ticket-movie-title">Michael (IMAX)</h3>
+            </div>
+            
+            <div class="ticket-detail-grid">
+              <div>
+                <span class="ticket-label">CINEMA</span>
+                <span class="ticket-value" id="ticket-cinema-name">UCI Cinemas Bicocca</span>
+              </div>
+              <div>
+                <span class="ticket-label">CIDADE</span>
+                <span class="ticket-value" id="ticket-cinema-city">Milão, Itália</span>
+              </div>
+              <div>
+                <span class="ticket-label">DATA / HORA</span>
+                <span class="ticket-value" id="ticket-date-time">Hoje • 21:00</span>
+              </div>
+              <div>
+                <span class="ticket-label">FORMATO</span>
+                <span class="ticket-value" id="ticket-format">IMAX VIP</span>
+              </div>
+              <div>
+                <span class="ticket-label">ASSENTOS</span>
+                <span class="ticket-value text-glow" id="ticket-seats-list">C4, C5</span>
+              </div>
+              <div>
+                <span class="ticket-label">VALOR TOTAL</span>
+                <span class="ticket-value highlight-text" id="ticket-price-total">€ 38.00</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="ticket-divider">
+            <span class="divider-circle left"></span>
+            <span class="divider-line"></span>
+            <span class="divider-circle right"></span>
+          </div>
+          
+          <div class="ticket-checkout-details">
+            <div class="qr-code-wrapper">
+              <!-- QR Code estilizado no CSS -->
+              <div class="qr-mock">
+                <span class="qr-corner top-left"></span>
+                <span class="qr-corner top-right"></span>
+                <span class="qr-corner bottom-left"></span>
+                <span class="qr-corner bottom-right"></span>
+                <div class="qr-inner">
+                  <div class="qr-pixel-grid"></div>
+                </div>
+              </div>
+            </div>
+            <div class="ticket-booking-ref">
+              <span class="ticket-label">CÓDIGO DE RESERVA</span>
+              <strong id="ticket-ref-code">TK-98716A-08</strong>
+              <button class="button button-secondary button-small" id="btn-copy-ticket" type="button">
+                Copiar Código
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer>
-      <p>MiniHacka 2026-1 - 3º período de Redes de Computadores (Integrado).</p>
-      <a href="#inicio">Voltar ao topo</a>
+      <div class="footer-content">
+        <p>&copy; 2026 MiniHacka P3 - Redes de Computadores (Integrado).</p>
+        <p class="footer-credits">Desenvolvido pela Equipe 08 com estética premium escura.</p>
+        <a href="#inicio" class="back-to-top">Voltar ao topo &uarr;</a>
+      </div>
     </footer>
 
     <script src="script.js" defer></script>
