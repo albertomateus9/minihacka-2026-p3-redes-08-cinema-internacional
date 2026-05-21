@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Mapeamento dos Cinemas / Cidades (Slide 4)
-  const cinemasData = {
+  // Mapeamento dos Cinemas / Cidades (Slide 4) - Originais
+  const cinemasDataOriginal = {
     "belem-grao": {
       name: "UCI Shopping Grão Pará",
       city: "Belém, Brasil",
@@ -71,12 +71,53 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Mapeamento dos Nomes dos Filmes (Slide 3)
-  const moviesData = {
+  const cinemasDataSchool = {
+    "belem-grao": {
+      name: "Auditório Principal EETEPA",
+      city: "EETEPA Vilhena Alves",
+      currency: "R$",
+      stdPrice: 0.00,
+      vipPrice: 0.00
+    },
+    "belem-metro": {
+      name: "Laboratório de Redes de Computadores",
+      city: "EETEPA Vilhena Alves",
+      currency: "R$",
+      stdPrice: 0.00,
+      vipPrice: 0.00
+    },
+    "portland-century": {
+      name: "Sala de Multimídia A",
+      city: "EETEPA Vilhena Alves",
+      currency: "R$",
+      stdPrice: 0.00,
+      vipPrice: 0.00
+    },
+    "milao-bicocca": {
+      name: "Espaço de Convivência / Pátio",
+      city: "EETEPA Vilhena Alves",
+      currency: "R$",
+      stdPrice: 0.00,
+      vipPrice: 0.00
+    }
+  };
+
+  let cinemasData = { ...cinemasDataOriginal };
+
+  // Mapeamento dos Nomes dos Filmes (Slide 3) - Originais
+  const moviesDataOriginal = {
     prada2: "O Diabo Veste Prada 2",
     michael: "Michael (IMAX)",
     mk2: "Mortal Kombat 2"
   };
+
+  const moviesDataSchool = {
+    prada2: "O Jogo da Imitação (Criptografia)",
+    michael: "O Dilema das Redes (Sociedade)",
+    mk2: "Piratas do Vale do Silício (História da TI)"
+  };
+
+  let moviesData = { ...moviesDataOriginal };
 
   /* ==========================================================================
      2. REDES GLOBAIS - SELEÇÃO DE TABS
@@ -148,6 +189,69 @@ document.addEventListener("DOMContentLoaded", () => {
   const labelPriceInteira = document.getElementById("label-price-inteira");
   const labelPriceMeia = document.getElementById("label-price-meia");
   const btnCheckout = document.getElementById("btn-checkout");
+
+  const toggleCineclube = document.getElementById("toggle-cineclube");
+  const cineclubeCard = document.querySelector(".cineclube-card");
+
+  function updateSelectElements() {
+    const savedCinema = selectCinema.value;
+    const savedMovie = selectMovie.value;
+
+    selectCinema.innerHTML = "";
+    selectMovie.innerHTML = "";
+
+    if (toggleCineclube && toggleCineclube.checked) {
+      cinemasData = { ...cinemasDataSchool };
+      moviesData = { ...moviesDataSchool };
+
+      selectCinema.innerHTML = `
+        <option value="belem-grao" data-currency="R$" data-city="EETEPA Vilhena Alves" data-ticket-price="0.00" data-vip-price="0.00">Auditório Principal (EETEPA, R$ 0,00)</option>
+        <option value="belem-metro" data-currency="R$" data-city="EETEPA Vilhena Alves" data-ticket-price="0.00" data-vip-price="0.00">Lab de Redes de Computadores (EETEPA, R$ 0,00)</option>
+        <option value="portland-century" data-currency="R$" data-city="EETEPA Vilhena Alves" data-ticket-price="0.00" data-vip-price="0.00">Sala de Multimídia A (EETEPA, R$ 0,00)</option>
+        <option value="milao-bicocca" data-currency="R$" data-city="EETEPA Vilhena Alves" data-ticket-price="0.00" data-vip-price="0.00">Espaço de Convivência / Pátio (EETEPA, R$ 0,00)</option>
+      `;
+
+      selectMovie.innerHTML = `
+        <option value="prada2">O Jogo da Imitação (Criptografia)</option>
+        <option value="michael">O Dilema das Redes (Sociedade)</option>
+        <option value="mk2">Piratas do Vale do Silício (História da TI)</option>
+      `;
+
+      if (cineclubeCard) cineclubeCard.classList.add("active");
+    } else {
+      cinemasData = { ...cinemasDataOriginal };
+      moviesData = { ...moviesDataOriginal };
+
+      selectCinema.innerHTML = `
+        <option value="belem-grao" data-currency="R$" data-city="Belém, Brasil" data-ticket-price="30.00" data-vip-price="60.00">UCI Shopping Grão Pará (Belém, BRL R$)</option>
+        <option value="belem-metro" data-currency="R$" data-city="Belém, Brasil" data-ticket-price="28.00" data-vip-price="55.00">UCI Shopping Metrópole (Belém, BRL R$)</option>
+        <option value="portland-century" data-currency="US$" data-city="Portland, EUA" data-ticket-price="12.00" data-vip-price="22.00">Century Theatre 16 (Portland, USD $)</option>
+        <option value="milao-bicocca" data-currency="€" data-city="Milão, Itália" data-ticket-price="10.50" data-vip-price="19.00">UCI Cinemas Bicocca (Milão, EUR €)</option>
+      `;
+
+      selectMovie.innerHTML = `
+        <option value="prada2">O Diabo Veste Prada 2</option>
+        <option value="michael">Michael (IMAX)</option>
+        <option value="mk2">Mortal Kombat 2</option>
+      `;
+
+      if (cineclubeCard) cineclubeCard.classList.remove("active");
+    }
+
+    if (savedCinema && selectCinema.querySelector(`option[value="${savedCinema}"]`)) {
+      selectCinema.value = savedCinema;
+    } else {
+      selectCinema.selectedIndex = 0;
+    }
+    currentCinema = selectCinema.value;
+
+    if (savedMovie && selectMovie.querySelector(`option[value="${savedMovie}"]`)) {
+      selectMovie.value = savedMovie;
+    } else {
+      selectMovie.selectedIndex = 0;
+    }
+    currentMovie = selectMovie.value;
+  }
 
   // Estado atual do Simulador
   let currentCinema = selectCinema.value;
@@ -306,17 +410,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // Calcula o valor total e atualiza na UI
   function updateCalculation() {
     const cinema = cinemasData[currentCinema];
+    if (!cinema) return;
     const currency = cinema.currency;
 
     if (selectedSeats.length === 0) {
       selectedSeatsList.textContent = "Nenhuma";
-      summaryTotal.textContent = `${currency} 0,00`;
+      if (toggleCineclube && toggleCineclube.checked) {
+        summaryTotal.textContent = `R$ 0,00`;
+      } else {
+        summaryTotal.textContent = `${currency} 0,00`;
+      }
       btnCheckout.disabled = true;
       return;
     }
 
     selectedSeatsList.textContent = selectedSeats.sort().join(", ");
     btnCheckout.disabled = false;
+
+    if (toggleCineclube && toggleCineclube.checked) {
+      summaryTotal.textContent = `R$ 0,00 (Entrada Franca)`;
+      return;
+    }
 
     // Classifica os assentos em VIP e Standard para calcular preços
     let vipSeatsCount = 0;
@@ -361,6 +475,15 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ==========================================================================
      5. DISPARADORES DE EVENTO NO SIMULADOR
      ========================================================================== */
+
+  // Alteração de Cineclube Toggle
+  if (toggleCineclube) {
+    toggleCineclube.addEventListener("change", () => {
+      updateSelectElements();
+      updateTicketPricesLabels();
+      renderSeatsMap();
+    });
+  }
 
   // Alteração de Cinema
   selectCinema.addEventListener("change", () => {
@@ -417,18 +540,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // Função para abrir o modal
   function openTicketModal() {
     const cinema = cinemasData[currentCinema];
+    if (!cinema) return;
+    const isSchool = toggleCineclube && toggleCineclube.checked;
     
     // Inserir valores dinâmicos no bilhete de vidro
     ticketMovieTitle.textContent = moviesData[currentMovie];
     ticketCinemaName.textContent = cinema.name;
     ticketCinemaCity.textContent = cinema.city;
     ticketDateTime.textContent = `Hoje • ${currentSessionTime}`;
-    ticketFormat.textContent = currentSessionFormat;
+    ticketFormat.textContent = isSchool ? (currentSessionFormat.includes("IMAX VIP") ? "Sessão Escolar VIP" : "Sessão Escolar") : currentSessionFormat;
     ticketSeatsList.textContent = selectedSeats.sort().join(", ");
-    ticketPriceTotal.textContent = summaryTotal.textContent;
+    ticketPriceTotal.textContent = isSchool ? "R$ 0,00 (Entrada Franca)" : summaryTotal.textContent;
+
+    // Logo / Brand name in ticket modal
+    const ticketBrandName = document.querySelector(".ticket-brand span:last-child");
+    if (ticketBrandName) {
+      ticketBrandName.textContent = isSchool ? "CINECLUBE EETEPA" : "INTERNATIONAL CINEMA";
+    }
 
     // Gera um código de reserva fictício premium
-    const randomRef = "TK-" + Math.random().toString(36).substring(2, 8).toUpperCase() + "-08";
+    const prefix = isSchool ? "EETEPA" : "TK";
+    const randomRef = prefix + "-" + Math.random().toString(36).substring(2, 8).toUpperCase() + "-08";
     ticketRefCode.textContent = randomRef;
 
     ticketModal.classList.add("is-open");
@@ -490,6 +622,9 @@ document.addEventListener("DOMContentLoaded", () => {
      7. INICIALIZAÇÃO DO SISTEMA
      ========================================================================== */
   
+  if (toggleCineclube) {
+    updateSelectElements();
+  }
   updateTicketPricesLabels();
   renderSeatsMap();
 });
